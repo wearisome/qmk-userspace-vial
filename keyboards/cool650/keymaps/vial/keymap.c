@@ -25,10 +25,6 @@ KC_LCTL, KC_LALT, KC_LGUI, KC_INSERT, KC_SPACE,KC_SPACE,LT(1,KC_SPACE),LT(2,KC_S
  )
 };
 
-void keyboard_post_init_user(void) {
-  debug_enable=true;
-  debug_matrix=true;
-  debug_keyboard=true;
-  //debug_mouse=true;
+layer_state_t layer_state_set_user(layer_state_t state) {
+  return update_tri_layer_state(state, 1, 2, 3);
 }
-
