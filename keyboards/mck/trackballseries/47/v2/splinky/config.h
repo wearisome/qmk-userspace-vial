@@ -46,7 +46,7 @@
 #define SPLIT_MODS_ENABLE
 #define SPLIT_OLED_ENABLE
 #define SPLIT_WPM_ENABLE
-#define OLED_FONT_H "keyboards/trackballseries/47/keymaps/vial/glcdfont.c"
+#define OLED_FONT_H "47/keymaps/vial/glcdfont.c"
 #define OLED_TIMEOUT 50000
 #endif
 
