@@ -187,7 +187,7 @@ void matrix_scan_user(void) {
 #ifdef CHARYBDIS_AUTO_SNIPING_ON_LAYER
 layer_state_t layer_state_set_user(layer_state_t state) {
     charybdis_set_pointer_sniping_enabled(layer_state_cmp(state, CHARYBDIS_AUTO_SNIPING_ON_LAYER));
-    return state;
+    return update_tri_layer_state(state, LAYER_LOWER, LAYER_RAISE, LAYER_POINTER);
 }
 #    endif // CHARYBDIS_AUTO_SNIPING_ON_LAYER
 #endif     // POINTING_DEVICE_ENABLE
@@ -282,7 +282,7 @@ void render_space(void) {
 void render_logo(void) {
         oled_write_P(PSTR("Track"), false);
         oled_write_P(PSTR("ball "), false);
-        oled_write_P(PSTR("47   "), false);
+        oled_write_P(PSTR("47  K"), false);
 
 }
 
