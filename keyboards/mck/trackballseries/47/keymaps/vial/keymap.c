@@ -193,15 +193,31 @@ void matrix_scan_user(void) {
 
 }
 #endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
-
-
-#ifdef CHARYBDIS_AUTO_SNIPING_ON_LAYER
-layer_state_t layer_state_set_user(layer_state_t state) {
-    charybdis_set_pointer_sniping_enabled(layer_state_cmp(state, CHARYBDIS_AUTO_SNIPING_ON_LAYER));
-    return update_tri_layer_state(state, LAYER_LOWER, LAYER_RAISE, LAYER_ADJUST);
-}
-#    endif // CHARYBDIS_AUTO_SNIPING_ON_LAYER
 #endif     // POINTING_DEVICE_ENABLE
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    #ifdef CHARYBDIS_AUTO_SNIPING_ON_LAYER
+    charybdis_set_pointer_sniping_enabled(layer_state_cmp(state, CHARYBDIS_AUTO_SNIPING_ON_LAYER));
+    #endif // CHARYBDIS_AUTO_SNIPING_ON_LAYER
+
+    state = update_tri_layer_state(state, LAYER_LOWER, LAYER_RAISE, LAYER_ADJUST);
+
+    uint8_t layer = biton32(state);
+    switch(layer) {
+      case LAYER_MOUSE:
+        rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+        rgb_matrix_sethsv_noeeprom(HSV_RED);
+        break;
+      case LAYER_POINTER:
+        rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+        rgb_matrix_sethsv_noeeprom(HSV_GREEN);
+        break;
+      default:
+        rgb_matrix_reload_from_eeprom();
+    }
+
+    return state;
+}
 
 #ifdef RGB_MATRIX_ENABLE
 // Forward-declare this helper function since it is defined in rgb_matrix.c.
