@@ -683,27 +683,22 @@ static void tv_ms(void) {
     oled_write_ln(count_ams_str, false);
 
     trackball_oled_info();
-
-
-
-    }
+}
 
 
 static void master_data(void) {
-   if(user_config.is_oled_enabled){
-       tv_ms();
-   }else{
+    if(user_config.is_oled_enabled){
+        tv_ms();
+    }else{
         //oled_set_cursor(0, 0);
-            render_cat();
+        render_cat();
         //char string[10];
-            uint16_t m = get_current_wpm();
-            oled_write_P(PSTR("WPM:"), false);
-            char wpm_str[6];
-            snprintf(wpm_str, sizeof(wpm_str), "%d", m);
-            oled_write(wpm_str, false);
-   }
-
-
+        uint16_t m = get_current_wpm();
+        oled_write_P(PSTR("WPM:"), false);
+        char wpm_str[6];
+        snprintf(wpm_str, sizeof(wpm_str), "%d", m);
+        oled_write(wpm_str, false);
+    }
 }
 
 
@@ -717,10 +712,6 @@ bool oled_task_user(void) {
     }
 
     return false;
-
 }
 
 #endif
-
-
-
