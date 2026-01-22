@@ -14,7 +14,7 @@
         "cols": ["GP0", "GP1", "GP2", "GP4", "GP5", "GP6"],
         "rows": ["GP8", "GP9", "GP29", "GP7", "GP28", "GP27"]
     },
-    "processor": "promicro",
+    "processor": "atmega32u4",
     "usb": {
         "device_version": "0.0.1",
         "pid": "0x0A54",
