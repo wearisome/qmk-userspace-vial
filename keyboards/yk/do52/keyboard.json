@@ -2,7 +2,7 @@
     "manufacturer": "YK",
     "keyboard_name": "DO52",
     "maintainer": "kazubu",
-    "bootloader": "promicro",
+    "bootloader": "caterina",
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic": true,
