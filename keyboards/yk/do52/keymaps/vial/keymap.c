@@ -17,8 +17,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,                             KC_N,     KC_M,      KC_COMM,  KC_DOT,    KC_SLSH,  KC_BSLS,
         KC_LGUI,  KC_LALT,  XXXXXXX,  XXXXXXX,  LT(1,KC_LNG2),LALT_T(KC_SPC),               RALT_T(KC_ENT),LT(2,KC_LNG1),XXXXXXX, XXXXXXX, KC_RALT,  KC_APP,
         XXXXXXX,
-        KC_MS_WH_UP,  KC_MS_WH_LEFT,  KC_MS_BTN1, KC_MS_WH_RIGHT, KC_MS_WH_DOWN,  //left stick UP LEFT CENTER RIGHT DOWN
-        KC_MS_BTN1,   KC_MS_BTN2,     KC_MS_BTN1, KC_MS_BTN2,     KC_MS_BTN1,     //right stick
+        MS_WHLU,  MS_WHLL,  MS_BTN1, MS_WHLR, MS_WHLD,  //left stick UP LEFT CENTER RIGHT DOWN
+        MS_BTN1,   MS_BTN2,     MS_BTN1, MS_BTN2,     MS_BTN1,     //right stick
         XXXXXXX
     ),
 
@@ -29,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                          XXXXXXX,  XXXXXXX,   _______,  _______,  _______,  _______,
         _______,  _______,  _______,  _______,  _______,  _______,                          _______,  _______,   _______,  _______,  _______,  _______,
         XXXXXXX,
-        _______,      _______,        KC_MS_BTN2, _______,        _______,
-        KC_MS_WH_UP,  KC_MS_WH_LEFT,  KC_MS_BTN2, KC_MS_WH_RIGHT, KC_MS_WH_DOWN,
+        _______,      _______,        MS_BTN2, _______,        _______,
+        MS_WHLU,  MS_WHLL,  MS_BTN2, MS_WHLR, MS_WHLD,
         XXXXXXX
     ),
 
@@ -41,11 +41,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,  _______,  _______,  _______,                          S(KC_MINS),S(KC_EQL),S(KC_LBRC),S(KC_RBRC),S(KC_BSLS), S(KC_GRV),
         _______,  _______,  _______,  _______,  _______,  _______,                          _______,  _______,  _______,  _______,  _______, _______,
         XXXXXXX,
-        _______,      KC_WWW_BACK,    KC_MS_BTN2, KC_WWW_FORWARD, _______,
-        _______,      _______,        KC_MS_BTN2, _______,        _______,
+        _______,      KC_WWW_BACK,    MS_BTN2, KC_WWW_FORWARD, _______,
+        _______,      _______,        MS_BTN2, _______,        _______,
         XXXXXXX
     ),
-    
+
     [_ADJUST] = LAYOUT(
         QK_BOOT,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,                            KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,
         _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,                            KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,
