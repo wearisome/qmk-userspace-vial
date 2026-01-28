@@ -11,8 +11,8 @@
         "nkro": true
     },
     "matrix_pins": {
-        "cols": ["D3", "D2", "D1", "D4", "C6", "D7"],
-        "rows": ["B4", "B5", "F4", "E6", "F5", "F6"]
+        "cols": ["GP0", "GP1", "GP2", "GP4", "GP5", "GP6"],
+        "rows": ["GP8", "GP9", "GP29", "GP7", "GP28", "GP27"]
     },
     "processor": "atmega32u4",
     "usb": {
@@ -21,9 +21,9 @@
         "vid": "0xFEA6"
     },
     "ps2": {
-        "clock_pin": "B2",
-        "data_pin": "B1",
-        "driver": "interrupt",
+        "clock_pin": "GP23",
+        "data_pin": "GP22",
+        "driver": "vendor",
         "enabled": true,
         "mouse_enabled": true
     },
@@ -35,12 +35,13 @@
         },
         "matrix_pins": {
             "right": {
-                "cols": ["D3", "D2", "D1", "D4", "C6", "D7"],
-                "rows": ["B4", "B5", "F4", "E6", "F5", "F6"]
+                "cols": ["GP0", "GP1", "GP2", "GP4", "GP5", "GP6"],
+                "rows": ["GP8", "GP9", "GP29", "GP7", "GP28", "GP27"]
             }
         },
+        "soft_serial_pin": "GP3",
         "transport": {
-            "protocol": "i2c"
+            "protocol": "serial"
         }
     },
     "layouts": {
